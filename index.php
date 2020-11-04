@@ -695,16 +695,11 @@ if (!isset($_SESSION['username'])) {
                     console.log(data)
 
                     const slides = document.getElementsByClassName("mySlides");
-                    pendingSection.lastElementChild.classList.add('thanks');
                     pendingSection.lastElementChild.innerHTML = "";
+                    pendingSection.lastElementChild.classList.add('thanks');
                     setTimeout(function() {
+                        pendingSection.remove();
                         plusSlides(1);
-
-                        if (slides.length == 1) {
-                            $('#pending-modal').modal('hide');
-                        } else {
-                            pendingSection.remove();
-                        }
                     }, 2000);
 
                 },
@@ -727,13 +722,9 @@ if (!isset($_SESSION['username'])) {
                     pendingSection.lastElementChild.classList.add('thanks');
                     pendingSection.lastElementChild.innerHTML = "";
                     setTimeout(function() {
+                        pendingSection.remove();
                         plusSlides(1);
-
-                        if (slides.length == 1) {
-                            $('#pending-modal').modal('hide');
-                        } else {
-                            pendingSection.remove();
-                        }
+                        console.log(slides.length)
                     }, 2000);
                 },
             });

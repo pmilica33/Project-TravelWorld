@@ -15,13 +15,16 @@ function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
 function showSlides(n) {
-    console.log(slideIndex)
+    console.log("index" + slideIndex)
+    console.log(n)
+
     const slides = document.getElementsByClassName("mySlides");
+    console.log("duzina" + slides.length)
+    if (slides.length == 0) {
+        $('#pending-modal').modal('hide');
+        return;
+    }
 
     if (n > slides.length) {
         slideIndex = 1
@@ -32,6 +35,6 @@ function showSlides(n) {
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
-
+    //Pocinje niz od 0 zato -1
     slides[slideIndex - 1].style.display = "block";
 }
