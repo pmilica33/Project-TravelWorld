@@ -1,0 +1,47 @@
+.stars {
+    min-width: max-content !important;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+
+    cursor: pointer;
+    width: 33px;
+    position: relative !important;
+
+}
+
+/* Because after and before is impossible whith inputs and img */
+.stars label:before {
+    content: '\f005';
+    font-family: FontAwesome;
+    display: block;
+    font-size: 22px;
+    color: #101010
+}
+
+.stars label:after {
+    content: '\f005';
+    font-family: FontAwesome;
+    position: absolute;
+    display: block;
+    font-size: 22px;
+    color: goldenrod;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+
+/*                ~   sibilings which follow */
+
+
+.stars label:hover:after,
+.stars input:checked~label:after,
+.stars label:hover~label:after {
+    opacity: 1;
+}
