@@ -5,6 +5,6 @@
 
 2.Slanje mail potrebno je na računaru podesiti php.ini
 
-3.Da bi se učitali podaci potrebna je i baza
+3.Da bi se učitali podaci potrebna je i baza (pod imenom api)
 
 
